@@ -385,6 +385,7 @@ section {
   padding: 0;
   flex: 1;
   border-top: solid 1px #ccc;
+  position: relative;
 }
 .todo-list li {
   display: flex;
