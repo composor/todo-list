@@ -9,8 +9,7 @@ export function ListItem({props, item}) {
       </button>
       <h3>{item.value}</h3>
       <button class="delete" onclick={props.deleteItem}>
-        <svg width="20px" height="20px" viewBox="0 0 30 30" version="1.1"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Delete" stroke="#FF0000" stroke-width="2" stroke-linecap="square"><path d="M26.5,3.5 L3.5,26.5" id="Line"></path><path d="M3.5,3.5 L26.5,26.5" id="Line"></path></g></g></svg>
-      </button>
+        X</button>
     </li>
   )
 }

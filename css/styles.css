@@ -449,6 +449,7 @@ button.delete {
   height: 30px;
   width: 30px;
   border: solid 1px #FF0000;
+  color: #ff0000;
   border-radius: 30px;
   margin-right: 10px;
   background-color: transparent;

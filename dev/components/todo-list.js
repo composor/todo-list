@@ -41,6 +41,9 @@ export class TodoList extends Component {
       </div>
     )
   }
+  componentDidMount() {
+    this.input = this.element.querySelector('input')
+  }
   setActiveState(e) {
     const id = e.target.closest('li').dataset.id
     let state = this.state
@@ -86,12 +89,14 @@ export class TodoList extends Component {
     button.className = 'selected'
   }
   addItem() {
-    const input = this.element.querySelector('input')
-    const value = input.value
+    const value = this.input.value
     if (value) {
-      this.setState({active: true, value, id: uuid()}, this.state.length)
+      this.setState(prevState => {
+        prevState.push({active: true, value, id: uuid()})
+        return prevState
+      })
       localStorage.setItem('todo-list', JSON.stringify(this.state))
-      input.value = ''
+      this.input.value = ''
     } else {
       alert('Please provide a todo to add!')
     }
