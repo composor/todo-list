@@ -242,6 +242,7 @@ textarea {
 button,
 input {
   overflow: visible;
+  border: solid 1px #ccc;
 }
 
 button,
