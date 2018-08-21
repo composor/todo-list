@@ -1,7 +1,7 @@
 import {h, Component} from 'composi'
 import {uuid} from '../utils/uuid'
-import {ListItem} from './list-item'
-import {Footer} from './footer'
+import {List} from './list'
+
 
 // Define Todo List class:
 export class TodoList extends Component {
@@ -25,20 +25,7 @@ export class TodoList extends Component {
     })
 
     return (
-      <div class="parent-view">
-        <p class="add-todo">
-          <input type="text"/>
-          <button class='addItem' onclick={this.addItem}>Add Item</button>
-        </p>
-        <ul class='todo-list'>
-          {
-            data.map(item => (
-              <ListItem {...{props: this, item}}/>
-            ))
-          }
-        </ul>
-        <Footer props={this} />
-      </div>
+      <List component={this} data={this.state} addItem={() => this.addItem()}/>
     )
   }
   componentDidMount() {
